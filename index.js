@@ -1,4 +1,4 @@
- let botonSeleccionar = document.getElementById('boton-mascota')
+let botonSeleccionar = document.getElementById('boton-mascota')
 botonSeleccionar.addEventListener('click', seleccionarPersonajeJugador)
 
 
@@ -7,40 +7,41 @@ function seleccionarPersonajeJugador() {
     let seleccionarCapipepo = document.getElementById("capipepo");
     let seleccionarRatigueya = document.getElementById("ratigueya");
 
-    if(seleccionarHipodoge.checked){
-         let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
-         mascotaSeleccionada.innerHTML = "Hipodoge"
+    if (seleccionarHipodoge.checked) {
+        let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
+        mascotaSeleccionada.innerHTML = "Hipodoge"
     }
-    else if(seleccionarCapipepo.checked){
+    else if (seleccionarCapipepo.checked) {
         let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
         mascotaSeleccionada.innerHTML = "Capipepo"
-    } else if(seleccionarRatigueya.checked){
+    } else if (seleccionarRatigueya.checked) {
         let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
         mascotaSeleccionada.innerHTML = "Ratigueya"
-    } else{
-        alert("No olvides elejir tu mascota!!")
+    } else {
+        alert("Selecciona tu mascota!")
     }
 
-    seleccionarPersonajeEnemigo() 
- 
+    seleccionarPersonajeEnemigo()
+
 }
 
 function seleccionarPersonajeEnemigo() {
-    let ataqueAleatorio = aleatorio(1,3) 
+    let ataqueAleatorio = aleatorio(1, 3)
     let mascotaSeleccionadaEnemigo = document.getElementById("mascotaSeleccionadaEnemigo");
 
-    if(ataqueAleatorio == 1){
-       mascotaSeleccionadaEnemigo.innerHTML = "Hipodoge"
-    } else if(ataqueAleatorio == 2){
+    if (ataqueAleatorio == 1) {
+        mascotaSeleccionadaEnemigo.innerHTML = "Hipodoge"
+    } else if (ataqueAleatorio == 2) {
         mascotaSeleccionadaEnemigo.innerHTML = "Capipepo"
-     } else {
+    } else {
         mascotaSeleccionadaEnemigo.innerHTML = "Ratigueya"
-     }
-     
+    }
+
 }
 
-function aleatorio(min, max){
-   return Math.floor(Math.random() * (max - min + 1) + min);
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 seleccionarPersonajeJugador()
+
