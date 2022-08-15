@@ -4,6 +4,18 @@ let botonSeleccionar = document.getElementById('boton-mascota')
 botonSeleccionar.addEventListener('click', seleccionarPersonajeJugador)
 let ocultarSeleccionarPersonaje = document.getElementById("seleccionar-ataque")
 ocultarSeleccionarPersonaje.style.display = "none";
+
+
+    let ataqueFuego = document.getElementById("botonAtaqueFuego")
+    ataqueFuego.addEventListener("click", combateFuego)
+    let ataqueAgua = document.getElementById("botonAtaqueAgua")
+    ataqueAgua.addEventListener("click", combateAgua)
+    let ataquetierra = document.getElementById("botonAtaqueTierra")
+    ataquetierra.addEventListener("click", combateTierra)
+
+
+    let ocultarMensaje = document.getElementById("mensajes")
+    ocultarMensaje.style.display = "none"
 }
 function seleccionarPersonajeJugador() {
     let seleccionarHipodoge = document.getElementById("hipodoge");
@@ -47,6 +59,34 @@ function seleccionarPersonajeEnemigo() {
     seleccionarPersonajeJugador()
 
 }
+
+function combateFuego(){
+    let ataqueJugadorFuego = document.getElementById("ataqueJugador") 
+    ataqueJugadorFuego.innerHTML = "FUEGO "
+
+    let ocultarMensaje = document.getElementById("mensajes")
+    ocultarMensaje.style.display = "block"
+}
+
+
+function combateAgua(){
+    let ataqueJugadorAgua = document.getElementById("ataqueJugador") 
+    ataqueJugadorAgua.innerHTML = "AGUA "
+
+    let ocultarMensaje = document.getElementById("mensajes")
+    ocultarMensaje.style.display = "block"
+}
+
+
+function combateTierra() {
+    let ataqueJugadorTierra = document.getElementById("ataqueJugador")
+    ataqueJugadorTierra.innerHTML = "TIERRA "
+
+    let ocultarMensaje = document.getElementById("mensajes")
+    ocultarMensaje.style.display = "block"
+}
+
+
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
