@@ -1,9 +1,15 @@
-function iniciarJuego(){
+let ataqueJugador
+let ataqueEnemigo
 
-let botonSeleccionar = document.getElementById('boton-mascota')
-botonSeleccionar.addEventListener('click', seleccionarPersonajeJugador)
-let ocultarSeleccionarPersonaje = document.getElementById("seleccionar-ataque")
-ocultarSeleccionarPersonaje.style.display = "none";
+
+
+
+function iniciarJuego() {
+
+    let botonSeleccionar = document.getElementById('boton-mascota')
+    botonSeleccionar.addEventListener('click', seleccionarPersonajeJugador)
+    let ocultarSeleccionarPersonaje = document.getElementById("seleccionar-ataque")
+    ocultarSeleccionarPersonaje.style.display = "none";
 
 
     let ataqueFuego = document.getElementById("botonAtaqueFuego")
@@ -16,6 +22,15 @@ ocultarSeleccionarPersonaje.style.display = "none";
 
     let ocultarMensaje = document.getElementById("mensajes")
     ocultarMensaje.style.display = "none"
+
+    let botonAtaqueFuego = document.getElementById("botonAtaqueFuego")
+    botonAtaqueFuego.addEventListener("click", combateFuego)
+
+    let botonAtaqueAgua = document.getElementById("botonAtaqueAgua")
+    botonAtaqueAgua.addEventListener("click", combateAgua)
+    
+    let botonAtaqueTierra = document.getElementById("botonAtaqueTierra")
+    botonAtaqueTierra.addEventListener("click", combateTierra)
 }
 function seleccionarPersonajeJugador() {
     let seleccionarHipodoge = document.getElementById("hipodoge");
@@ -35,9 +50,9 @@ function seleccionarPersonajeJugador() {
     } else if (seleccionarRatigueya.checked) {
         let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
         mascotaSeleccionada.innerHTML = "Ratigueya"
-      } 
+    }
 
-   
+
 
     seleccionarPersonajeEnemigo()
 
@@ -46,7 +61,7 @@ function seleccionarPersonajeJugador() {
 function seleccionarPersonajeEnemigo() {
     let ataqueAleatorio = aleatorio(1, 3)
     let mascotaSeleccionadaEnemigo = document.getElementById("mascotaSeleccionadaEnemigo");
-   
+
     if (ataqueAleatorio == 1) {
         mascotaSeleccionadaEnemigo.innerHTML = "Hipodoge"
     } else if (ataqueAleatorio == 2) {
@@ -55,37 +70,75 @@ function seleccionarPersonajeEnemigo() {
         mascotaSeleccionadaEnemigo.innerHTML = "Ratigueya"
     }
 
-    
+
     seleccionarPersonajeJugador()
 
 }
 
-function combateFuego(){
-    let ataqueJugadorFuego = document.getElementById("ataqueJugador") 
-    ataqueJugadorFuego.innerHTML = "FUEGO "
+function combateFuego() {
 
     let ocultarMensaje = document.getElementById("mensajes")
     ocultarMensaje.style.display = "block"
+
+    ataqueJugador = "FUEGO"
+
+
+
+    combateEnemigoAleatorio()
+
 }
 
-
-function combateAgua(){
-    let ataqueJugadorAgua = document.getElementById("ataqueJugador") 
-    ataqueJugadorAgua.innerHTML = "AGUA "
+function combateAgua() {
 
     let ocultarMensaje = document.getElementById("mensajes")
     ocultarMensaje.style.display = "block"
+
+    ataqueJugador = "AGUA"
+
+
+
+    combateEnemigoAleatorio()
 }
 
 
 function combateTierra() {
-    let ataqueJugadorTierra = document.getElementById("ataqueJugador")
-    ataqueJugadorTierra.innerHTML = "TIERRA "
 
     let ocultarMensaje = document.getElementById("mensajes")
     ocultarMensaje.style.display = "block"
+
+    ataqueJugador = "TIERRA"
+
+
+    combateEnemigoAleatorio()
+
 }
 
+
+function combateEnemigoAleatorio(){
+    ataqueEnemigo = aleatorio(1,3)
+  
+
+    if(ataqueEnemigo == 1){
+        ataqueEnemigo = "FUEGO"
+    } else if(ataqueEnemigo == 2){
+        ataqueEnemigo = "AGUA"
+    } else{
+        ataqueEnemigo = "TIERRA"
+    }
+    
+    crearMensaje()
+}
+
+
+function crearMensaje(){
+   let sectionMensaje = document.getElementById('mensajes')
+
+
+   let parrafo = document.createElement('p')
+   parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", las mascota del enemigo atacó con " + ataqueEnemigo + " - PENDIENTE"
+   
+   sectionMensaje.appendChild(parrafo)
+}
 
 
 function aleatorio(min, max) {
