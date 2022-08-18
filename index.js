@@ -125,9 +125,6 @@ function combateEnemigoAleatorio(){
     } else{
         ataqueEnemigo = "TIERRA"
     }
-    
-    //crearMensaje()
-
     combateFinal()
 }
 
