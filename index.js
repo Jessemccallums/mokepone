@@ -1,6 +1,9 @@
 let ataqueJugador
 let ataqueEnemigo
 
+let vidasJugador = 3
+let vidasEnemigo = 3
+
 
 
 
@@ -31,6 +34,9 @@ function iniciarJuego() {
     
     let botonAtaqueTierra = document.getElementById("botonAtaqueTierra")
     botonAtaqueTierra.addEventListener("click", combateTierra)
+
+    let botonReiniciar = document.getElementById("reiniciar-boton")
+    botonReiniciar.addEventListener("click", botonParaReiniciar)
 }
 function seleccionarPersonajeJugador() {
     let seleccionarHipodoge = document.getElementById("hipodoge");
@@ -140,31 +146,84 @@ function crearMensaje(resultadoCombate){
 
 }
 
+function crearMensajeFinal(resultadoCombateFinal){
+    let sectionMensaje = document.getElementById('mensajes')
+ 
+ 
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = resultadoCombateFinal
+    sectionMensaje.appendChild(parrafo)
+ 
+ }
+ 
+
 function combateFinal(){
+    let spanVidasJugador = document.getElementById("vidas-jugador")
+    let spanVidasEnemigo = document.getElementById("vidas-enemigo")
+
     if(ataqueJugador == ataqueEnemigo){
         crearMensaje( "EMPATE 😅")
        
     }
     else if(ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA"){
         crearMensaje("GANASTE!!! 🥳")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
         
     }
     else if(ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO"){
         crearMensaje("GANASTE!!! 🥳")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
         
     } else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA"){
         crearMensaje("GANASTE!!! 🥳")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+
+
         
     } else {
         crearMensaje("PERDISTE!!!!! 😤")
+        vidasJugador-- 
+        spanVidasJugador.innerHTML = vidasJugador
         
     }
 
     
-    
+    resultadoFinal()
+
+}
+ 
+function resultadoFinal() {
+    if(vidasJugador == 0){
+        crearMensaje("Lo siento amigo, perdiste...... :(")
+        let botonAtaqueFuego = document.getElementById("botonAtaqueFuego")
+        botonAtaqueFuego.disabled = true
+
+        let botonAtaqueAgua = document.getElementById("botonAtaqueAgua")
+        botonAtaqueAgua.disabled = true
+
+        let botonAtaqueTierra = document.getElementById("botonAtaqueTierra")
+        botonAtaqueTierra.disabled = true
+    } else if (vidasEnemigo == 0) {
+        crearMensaje("PERFECTO!!! GANASTE!! FELICIDADES!!!! :)")
+        let botonAtaqueFuego = document.getElementById("botonAtaqueFuego")
+        botonAtaqueFuego.disabled = true
+
+        let botonAtaqueAgua = document.getElementById("botonAtaqueAgua")
+        botonAtaqueAgua.disabled = true
+
+        let botonAtaqueTierra = document.getElementById("botonAtaqueTierra")
+        botonAtaqueTierra.disabled = true
+    }
+
 
 }
 
+function botonParaReiniciar() {
+    location.reload()
+}
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
