@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+body{
+    background-color: #16213E;
+    color: white;
+    font-family: 'VT323', monospace;
+    width: auto;
+    background-image: url(./2327343.jpg);
+    background-size: 100%;
+    
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+h2{
+    text-align: center;
+}
+
+.add-bigger-title {
+    font-size: 70px;
+}
+
+img{
+    width: 100px;
+}
+
+.control-of-cards {
+    display: flex;
+    gap: 100px;
+}
+
+.pets-cards {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    background-color: #0F3460;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#boton-mascota {
+    padding: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: auto;
+    display: flex;
+    margin-top: 60px;
+    background: #E94560;
+    color: white;
+}
+
+#hipodoge {
+    display: none;
+}
+
+#capipepo {
+    display: none;
+}
+
+#ratigueya {
+    display: none;
+}
+
+input:checked + label {
+    background-color: #5D8BF4;
+  }

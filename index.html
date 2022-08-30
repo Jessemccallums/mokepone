@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
     <title>Mokepone</title>
 </head>
 <body>
-    <h1>MOKEPON! 🔥💧🌱</h1>
+    <div class="center-content">
+    <h1 class="add-bigger-title">MINECRAFT "ENFRENTA TUS MIEDOS"</h1>
 
     <section id="seleccionar-mascota">
         <h2>Elige tu mascota:</h2>
-
-        <label for="hipodoge">Hipodoge</label>
+    <div class="control-of-cards">
+        
         <input type="radio" name="mascota" id="hipodoge" />
-        
-        <label for="capipepo">Capipepo</label>
-        <input type="radio" name="mascota" id="capipepo" />
-        
-        <label for="ratigueya">Ratigueya</label>
-        <input type="radio" name="mascota" id="ratigueya" />
+        <label for="hipodoge" class="pets-cards">
+        <p>Steve</p>
+        <img src="./737698_minecraft-steve-minecraft-transparent-png.png" alt="mascota">
+        </label>
 
+        
+        <input type="radio" name="mascota" id="capipepo" />
+        <label for="capipepo" class="pets-cards">
+        <p>Capipepo</p>
+        <img src="./mokepons_mokepon_capipepo_attack.png" alt="mascota">
+        </label>
+        
+        <input type="radio" name="mascota" id="ratigueya" />
+        <label for="ratigueya" class="pets-cards">
+        <p>Ratigueya</p>
+        <img src="./mokepons_mokepon_ratigueya_attack.png" alt="mascota">
+        </label>
+        
+    </div>
         <button id="boton-mascota">Seleccionar</button>
     </section>
 
@@ -44,7 +58,7 @@
     <section id="reiniciar">
         <button id="reiniciar-boton">Reiniciar</button>
     </section>
-
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
