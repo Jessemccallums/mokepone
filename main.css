@@ -20,6 +20,10 @@ body{
 
 h2{
     text-align: center;
+    color: #003865;
+    background-color: #D4F6CC;
+    padding: 10px;
+    border-radius: 75px;
 }
 
 .add-bigger-title {
@@ -40,7 +44,7 @@ img{
     display: flex;
     flex-direction: column;
     margin-top: 10%;
-    background-color: #0F3460;
+    background-color: #3CCF4E;
     box-sizing: border-box;
     padding: 10px;
     border-radius: 20px;
@@ -53,8 +57,11 @@ img{
     margin: auto;
     display: flex;
     margin-top: 60px;
-    background: #E94560;
-    color: white;
+    background: #D4F6CC;
+    color: black;
+    font-family: 'VT323', monospace;
+    border: transparent;
+    border-radius: 20px;
 }
 
 #hipodoge {
@@ -70,5 +77,5 @@ img{
 }
 
 input:checked + label {
-    background-color: #5D8BF4;
+    background-color: #EF5B0C;
   }
