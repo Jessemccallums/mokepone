@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-body{
+body {
     background-color: #16213E;
     color: white;
     font-family: 'VT323', monospace;
     width: auto;
     background-image: url(./2327343.jpg);
     background-size: 100%;
-    
+
 }
 
 .center-content {
@@ -18,7 +18,7 @@ body{
     overflow-x: hidden;
 }
 
-h2{
+h2 {
     text-align: center;
     color: #003865;
     background-color: #D4F6CC;
@@ -30,7 +30,7 @@ h2{
     font-size: 70px;
 }
 
-img{
+img {
     width: 100px;
 }
 
@@ -76,6 +76,39 @@ img{
     display: none;
 }
 
-input:checked + label {
+input:checked+label {
     background-color: #EF5B0C;
-  }
+}
+
+
+#botonAtaqueTierra {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #D4F6CC;
+    border-radius: 20px;
+    border: transparent;
+   
+}
+
+#botonAtaqueAgua {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #D4F6CC;
+    border-radius: 20px;
+    border: transparent;
+   
+}
+
+#botonAtaqueFuego {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #D4F6CC;
+    border-radius: 20px;
+    border: transparent;
+   
+}
+
+.flex-buttoms{
+    display: flex;
+    justify-content: space-between;
+}

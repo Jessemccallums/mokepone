@@ -51,19 +51,19 @@ function seleccionarPersonajeJugador() {
    
     if (seleccionarHipodoge.checked) {
         let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
-        mascotaSeleccionada.innerHTML = "Hipodoge"
+        mascotaSeleccionada.innerHTML = "Steve"
         let ocultarMascotaSeleccionada = document.getElementById("seleccionar-mascota")
         ocultarMascotaSeleccionada.style.display = "none"    
     }
     else if (seleccionarCapipepo.checked) {
         let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
-        mascotaSeleccionada.innerHTML = "Capipepo"
+        mascotaSeleccionada.innerHTML = "Esqueleto araña"
         let ocultarMascotaSeleccionada = document.getElementById("seleccionar-mascota")
         ocultarMascotaSeleccionada.style.display = "none"
     
     } else if (seleccionarRatigueya.checked) {
         let mascotaSeleccionada = document.getElementById("mascotaSeleccionadaJugador")
-        mascotaSeleccionada.innerHTML = "Ratigueya"
+        mascotaSeleccionada.innerHTML = "Wither araña"
         let ocultarMascotaSeleccionada = document.getElementById("seleccionar-mascota")
         ocultarMascotaSeleccionada.style.display = "none"
     
@@ -81,12 +81,12 @@ function seleccionarPersonajeEnemigo() {
     
 
     if (ataqueAleatorio == 1) {
-        mascotaSeleccionadaEnemigo.innerHTML = "Hipodoge"
+        mascotaSeleccionadaEnemigo.innerHTML = "Steve"
         
     } else if (ataqueAleatorio == 2) {
-        mascotaSeleccionadaEnemigo.innerHTML = "Capipepo"
+        mascotaSeleccionadaEnemigo.innerHTML = "Esqueleto araña"
     } else {
-        mascotaSeleccionadaEnemigo.innerHTML = "Ratigueya"
+        mascotaSeleccionadaEnemigo.innerHTML = "Wither araña"
     }
 
 
@@ -160,7 +160,7 @@ function crearMensaje(resultadoCombate){
 
 
    let parrafo = document.createElement('p')
-   parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", las mascota del enemigo atacó con " + ataqueEnemigo + " - " + resultadoCombate;
+   parrafo.innerHTML = "Tu personaje atacó con " + ataqueJugador + ", el personaje del enemigo atacó con " + ataqueEnemigo + " - " + resultadoCombate;
    
    sectionMensaje.appendChild(parrafo)
 
