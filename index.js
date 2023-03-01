@@ -4,10 +4,46 @@ let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
+let personajes = []
+let opcionDeMokepones
 
 
+
+
+
+class Mokepon {
+    constructor(nombre, img, id, vidas){
+        this.nombre = nombre
+        this.img = img
+        this.id = id
+        this.vidas = vidas
+        //this.ataques = []
+    }
+}
+
+let steve = new Mokepon("Steve", "./737698_minecraft-steve-minecraft-transparent-png.png", "hipodoge", 5);
+let esqueletoAraña = new Mokepon("Esqueleto araña", "./R.png", "capipepo", 5)
+let witherAraña = new Mokepon("Wither araña", "./660px-SpiderJockey.webp.png", "ratigueya", 5)
+
+personajes.push(steve,esqueletoAraña,witherAraña)
 
 function iniciarJuego() {
+     
+    let contenedorTarjetas = document.getElementById('classandobject')
+    
+    personajes.forEach((Mokepon) => {
+        opcionDeMokepones = `
+        <input type="radio" name="mascota" id=${Mokepon.id} />
+        <label for=${Mokepon.id} class="pets-cards">
+        <p>${Mokepon.nombre}</p>
+        <img src=${Mokepon.img} alt="mascota">
+        </label>
+        `
+    contenedorTarjetas.innerHTML += opcionDeMokepones
+
+    })
+
+    
 
     let botonSeleccionar = document.getElementById('boton-mascota')
     botonSeleccionar.addEventListener('click', seleccionarPersonajeJugador)
@@ -15,7 +51,7 @@ function iniciarJuego() {
     ocultarSeleccionarPersonaje.style.display = "none";
     let botonOcultarReiniciar = document.getElementById("reiniciar")
     botonOcultarReiniciar.style.display = "none";
-
+    
 
     let ataqueFuego = document.getElementById("botonAtaqueFuego")
     ataqueFuego.addEventListener("click", combateFuego)
@@ -39,6 +75,10 @@ function iniciarJuego() {
 
     let botonReiniciar = document.getElementById("reiniciar-boton")
     botonReiniciar.addEventListener("click", botonParaReiniciar)
+
+   
+  
+
 }
 function seleccionarPersonajeJugador() {
     let seleccionarHipodoge = document.getElementById("hipodoge");

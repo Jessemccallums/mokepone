@@ -6,7 +6,7 @@ body {
     color: white;
     font-family: 'VT323', monospace;
     width: auto;
-    background-image: url(./2327343.jpg);
+    background-image: url(./R\ \(4\).jpg);
     background-size: 100%;
 
 }
@@ -111,4 +111,14 @@ input:checked+label {
 .flex-buttoms{
     display: flex;
     justify-content: space-between;
+}
+
+.ataques{
+    background: rgb(0 0 0 / 16%);
+    backdrop-filter: blur(15px);
+    height: 38%;
+    width: 25%;
+    z-index: 1;
+    padding: 18px;
+    border-radius: 50%;
 }
